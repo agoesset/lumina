@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+    
+    --color-primary-50: #ecfdf5;
+    --color-primary-100: #d1fae5;
+    --color-primary-200: #a7f3d0;
+    --color-primary-300: #6ee7b7;
+    --color-primary-400: #34d399;
+    --color-primary-500: #10b981;
+    --color-primary-600: #059669;
+    --color-primary-700: #047857;
+    --color-primary-800: #065f46;
+    --color-primary-900: #064e3b;
+    
+    --color-accent-50: #fffbeb;
+    --color-accent-100: #fef3c7;
+    --color-accent-200: #fde68a;
+    --color-accent-300: #fcd34d;
+    --color-accent-400: #fbbf24;
+    --color-accent-500: #f59e0b;
+    --color-accent-600: #d97706;
+    --color-accent-700: #b45309;
+    
+    --color-surface: #ffffff;
+    --color-surface-dark: #1e293b;
+    --color-background: #f8fafc;
+    --color-background-dark: #0f172a;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@layer utilities {
+    .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .glass-dark {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .card-shadow {
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+    
+    .card-shadow-hover {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-out;
+    }
+    
+    .animate-slide-up {
+        animation: slideUp 0.4s ease-out;
+    }
+    
+    .animate-scale-in {
+        animation: scaleIn 0.2s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
